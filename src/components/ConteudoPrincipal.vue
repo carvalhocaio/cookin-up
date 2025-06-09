@@ -2,7 +2,7 @@
 export default {
   data() {
     return {
-      ingredientes: ['Alho', 'Manteiga', 'Orágano']
+      ingredientes: ['Alho', 'Manteiga', 'Orégano']
     }
   }
 }
