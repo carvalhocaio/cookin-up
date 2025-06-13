@@ -1,14 +1,13 @@
-export function obterCategorias() {
-  return [
-    {
-      "nome": "Laticínios e Ovos",
-      "ingredientes": ["Ovos", "Queijo", "Leite", "Manteiga", "Creme de Leite", "Iogurte", "Leite Condensado", "Sorvete"],
-      "rotulo": "laticinios_e_ovos"
-    },
-    {
-      "nome": "Farinhas e Fermentos",
-      "ingredientes": ["Farinha de trigo", "Polvilho", "Farinha de rosca", "Canjica", "Farinha de mandioca", "Fubá", "Linhaça", "Fermento químico"],
-      "rotulo": "farinhas_e_fermentos"
-    }
-  ]
+import type ICategoria from "@/interfaces/ICategoria"
+
+export async function obterCategorias() {
+  const resposta = await fetch("https://gist.githubusercontent.com/carvalhocaio/80214d502fef919e41ec4d54dbe48f18/raw/f6b8cd2a5b6c89f948447fb5f6210a3b8f31ec5b/cookinup-categorias.json")
+  const categorias: ICategoria[] = await resposta.json();
+
+  // simula atraso na resposta da API
+  await new Promise((resolver) => {
+    setTimeout(resolver, 3000)
+  })
+
+  return categorias
 }
