@@ -5,9 +5,9 @@ export async function obterCategorias() {
   const categorias: ICategoria[] = await resposta.json();
 
   // simula atraso na resposta da API
-  await new Promise((resolver) => {
-    setTimeout(resolver, 3000)
-  })
+  // await new Promise((resolver) => {
+  //   setTimeout(resolver, 3000)
+  // })
 
   return categorias
 }
