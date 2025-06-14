@@ -34,8 +34,9 @@ function navegar(pagina: Pagina) {
       />
       
       <MostrarReceitas
-      v-else-if="conteudo === 'MostrarReceitas'"
-      @editar-receitas="navegar('SelecionarIngredientes')"
+        v-else-if="conteudo === 'MostrarReceitas'"
+        :ingredientes="ingredientes"
+        @editar-receitas="navegar('SelecionarIngredientes')"
       />
     </KeepAlive>
   </main>
